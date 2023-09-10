@@ -201,6 +201,7 @@ require (
 )
 
 replace (
+	github.com/nutanix-cloud-native/cluster-api-provider-nutanix => github.com/adiantum/cluster-api-provider-nutanix v0.0.0-20230907161540-3351d1b71676
 	github.com/aws/eks-anywhere/internal/aws-sdk-go-v2/internal/configsources => ./internal/aws-sdk-go-v2/internal/configsources
 	github.com/aws/eks-anywhere/internal/aws-sdk-go-v2/internal/endpoints/v2 => ./internal/aws-sdk-go-v2/internal/endpoints/v2
 	github.com/aws/eks-anywhere/internal/aws-sdk-go-v2/service/snowballdevice => ./internal/aws-sdk-go-v2/service/snowballdevice

@@ -482,6 +482,8 @@ github.com/abhay-krishna/cluster-api v1.4.2-eksa.1 h1:mO+idOdh9Bpumgo41WJcrASPtJ
 github.com/abhay-krishna/cluster-api v1.4.2-eksa.1/go.mod h1:zTUgFFP+Vn620+N6Gt7gy8y4+hNGPHhuMvBPykyJfwA=
 github.com/acomagu/bufpipe v1.0.3 h1:fxAGrHZTgQ9w5QqVItgzwj235/uYZYgbXitB+dLupOk=
 github.com/acomagu/bufpipe v1.0.3/go.mod h1:mxdxdup/WdsKVreO5GpW4+M/1CE2sMG4jeGJ2sYmHc4=
+github.com/adiantum/cluster-api-provider-nutanix v0.0.0-20230907161540-3351d1b71676 h1:KR1+QgdG8aHG6OMocaPDPshktSCoajigsArz7pZO7oQ=
+github.com/adiantum/cluster-api-provider-nutanix v0.0.0-20230907161540-3351d1b71676/go.mod h1:dtw67nQjmUvy09TclygeSwAJaSle+xul6siEwsnij1o=
 github.com/agnivade/levenshtein v1.0.1/go.mod h1:CURSv5d9Uaml+FovSIICkLbAUZ9S4RqaHDIsdSBg7lM=
 github.com/agnivade/levenshtein v1.1.0 h1:n6qGwyHG61v3ABce1rPVZklEYRT8NFpCMrpZdBUbYGM=
 github.com/agnivade/levenshtein v1.1.0/go.mod h1:veldBMzWxcCG2ZvUTKD2kJNRdCk5hVbJomOvKkmgYbo=
