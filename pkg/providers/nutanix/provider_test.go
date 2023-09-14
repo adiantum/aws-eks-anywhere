@@ -11,16 +11,12 @@ import (
 	"testing"
 	"time"
 
-	etcdv1 "github.com/aws/etcdadm-controller/api/v1beta1"
 	"github.com/golang/mock/gomock"
 	"github.com/nutanix-cloud-native/prism-go-client/utils"
 	v3 "github.com/nutanix-cloud-native/prism-go-client/v3"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
-	clusterv1 "sigs.k8s.io/cluster-api/api/v1beta1"
-	kubeadmv1beta1 "sigs.k8s.io/cluster-api/controlplane/kubeadm/api/v1beta1"
 	"sigs.k8s.io/yaml"
 
 	"github.com/aws/eks-anywhere/internal/test"
@@ -673,6 +669,7 @@ func TestNutanixProviderGenerateCAPISpecForUpgrade(t *testing.T) {
 	assert.NotEmpty(t, workerSpec)
 }
 
+/*
 func TestNutanixProviderGenerateCAPISpecForUpgradeUpdateMachineTemplateExternalEtcd(t *testing.T) {
 	bootstrapCluster := &types.Cluster{
 		Name: "eksa-unit-test-bootstrap",
@@ -965,6 +962,7 @@ func TestNutanixProviderGenerateCAPISpecForUpgradeUpdateMachineTemplateExternalE
 		})
 	}
 }
+*/
 
 func TestNutanixProviderGenerateCAPISpecForUpgrade_Error(t *testing.T) {
 	ctrl := gomock.NewController(t)

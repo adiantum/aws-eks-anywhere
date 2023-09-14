@@ -8,10 +8,12 @@ import (
 
 	anywherev1 "github.com/aws/eks-anywhere/pkg/api/v1alpha1"
 	"github.com/aws/eks-anywhere/pkg/constants"
+	"github.com/aws/eks-anywhere/pkg/logger"
 )
 
 const (
 	nutanixEndpointKey = "NUTANIX_ENDPOINT"
+	expClusterResourceSetKey = "EXP_CLUSTER_RESOURCE_SET"
 )
 
 var osSetenv = os.Setenv
@@ -36,6 +38,13 @@ func setupEnvVars(datacenterConfig *anywherev1.NutanixDatacenterConfig) error {
 	if err := osSetenv(nutanixEndpointKey, datacenterConfig.Spec.Endpoint); err != nil {
 		return fmt.Errorf("unable to set %s: %v", nutanixEndpointKey, err)
 	}
+
+	logger.Info(fmt.Sprintf("[ENV SETUP] Setting up env %s", expClusterResourceSetKey))
+	if err := os.Setenv(expClusterResourceSetKey, "true"); err != nil {
+		return fmt.Errorf("unable to set %s: %v", expClusterResourceSetKey, err)
+	}
+	logger.Info(fmt.Sprintf("[ENV SETUP] %s=true", expClusterResourceSetKey))
+
 	return nil
 }
 
