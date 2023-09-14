@@ -96,6 +96,7 @@ spec:
   template:
     spec:
       preKubeadmCommands:
+      - sed -i "s/NUTANIX_PROVIDER_ID/$(dmidecode -s system-uuid)/g" /run/kubeadm/kubeadm-join-config.yaml
 {{- if .registryMirrorMap }}
         - cat /etc/containerd/config_append.toml >> /etc/containerd/config.toml
 {{- end }}
@@ -107,6 +108,7 @@ spec:
       joinConfiguration:
         nodeRegistration:
           kubeletExtraArgs:
+            provider-id: "nutanix://NUTANIX_PROVIDER_ID"
             # We have to pin the cgroupDriver to cgroupfs as kubeadm >=1.21 defaults to systemd
             # kind will implement systemd support in: https://github.com/kubernetes-sigs/kind/issues/1726
             #cgroup-driver: cgroupfs
