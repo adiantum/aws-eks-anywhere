@@ -717,7 +717,7 @@ metadata:
 spec:
   clusterSelector:
     matchLabels:
-      ccm: nutanix
+      cluster.x-k8s.io/cluster-name: "{{.clusterName}}"
   resources:
   - kind: ConfigMap
     name: nutanix-ccm
