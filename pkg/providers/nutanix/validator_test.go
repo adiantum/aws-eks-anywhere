@@ -755,10 +755,13 @@ func TestNutanixValidatorValidateDatacenterConfig(t *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
 			dcConf := &anywherev1.NutanixDatacenterConfig{}
+			clusterSpec := test.NewFullClusterSpec(t, "testdata/eksa-cluster.yaml")
+			clusterSpec.NutanixDatacenter = dcConf
+
 			err := yaml.Unmarshal([]byte(tc.dcConfFile), dcConf)
 			require.NoError(t, err)
 
-			err = validator.ValidateDatacenterConfig(context.Background(), clientCache.clients["test"], dcConf)
+			err = validator.ValidateDatacenterConfig(context.Background(), clientCache.clients["test"], clusterSpec)
 			if tc.expectErr {
 				assert.Error(t, err, tc.name)
 			} else {
@@ -799,10 +802,13 @@ func TestNutanixValidatorValidateDatacenterConfigWithInvalidCreds(t *testing.T) 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
 			dcConf := &anywherev1.NutanixDatacenterConfig{}
+			clusterSpec := test.NewFullClusterSpec(t, "testdata/eksa-cluster.yaml")
+			clusterSpec.NutanixDatacenter = dcConf
+
 			err := yaml.Unmarshal([]byte(tc.dcConfFile), dcConf)
 			require.NoError(t, err)
 
-			err = validator.ValidateDatacenterConfig(context.Background(), clientCache.clients["test"], dcConf)
+			err = validator.ValidateDatacenterConfig(context.Background(), clientCache.clients["test"], clusterSpec)
 			if tc.expectErr {
 				assert.Error(t, err, tc.name)
 			} else {
